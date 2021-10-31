@@ -1,6 +1,7 @@
-Vetux-Line
+# Vetux-Line
 
-##Contexte
+## Contexte
+
 La société de service dans laquelle vous travaillez a comme client l’entreprise VETUX-LINE, createur de ligne de vêtements.
 
 La société VETUX-LINE reçoit de la part de ses partenaires, tous les mois, 2 fichiers clients au format CSV.
@@ -12,7 +13,7 @@ La société nous communique des exemples de fichiers reçus. Ces fichiers sont 
 Les fichiers reçus contiennent plus d’information que nécessaire. Le fichier résultant de la fusion sera composé d’un sous-ensemble des colonnes existantes (appelé projection) et une sélection de lignes sera effectuée (sélection des personnes majeures uniquement, suppression de doublons…​). La demande du client est détaillée plus loin dans ce document.
 
 Dans un second temps (seconde partie de la mission), le service R&D de la société VETUX-LINE souhaite obtenir ces données sous la forme d’une base de données relationnelle.
-##Telechargement d'un fichier
+## Telechargement d'un fichier
 
 Le didacticiel de téléchargement de fichiers Symfony montre comment télécharger un fichier dans une application Symfony. Dans l’exemple, nous utilisons un formulaire normal pour envoyer le fichier; nous n’utilisons pas de générateur de formulaires.
 
@@ -35,7 +36,7 @@ $ composer require maker profiler --dev
 ```
 Pour la phase de développement, nous installons également le maker et le profileur.
 
-##Création d’une application Symfony
+##C réation d’une application Symfony
 Nous définissons le répertoire où les images seront téléchargées.
 
 ####config/services.yaml
@@ -58,7 +59,7 @@ Puis nous créons un controller Home.
 ```
 $ php bin/console make:controller HomeController
 ```
-####src/Contrôleur/HomeController.php
+#### src/Contrôleur/HomeController.php
 ```
 <?php
 namespace App\Controller;
@@ -77,7 +78,7 @@ class HomeController extends AbstractController
 ```
 Il s’agit d’un contrôleur simple qui envoie une vue contenant le formulaire Web à l’utilisateur.
 
-####templates/home/index.html.twig
+#### templates/home/index.html.twig
 ```
 {% extends 'base.html.twig' %}
 {% block title %}Upload file{% endblock %}
@@ -96,7 +97,7 @@ Créé un controller
 ```
 $ php bin/console make:controller UploadController
 ```
-####src/Contrôleur/UploadController.php
+#### src/Contrôleur/UploadController.php
 ```
 <?php
 namespace App\Controller;
@@ -141,7 +142,7 @@ class UploadController extends AbstractController
 ```
 Si tout se passe bien, nous envoyons un message simple « Fichier téléchargé » au client avec le code de réponse. Response::HTTP_OK
 
-####src/Service/FileUploader.php
+#### src/Service/FileUploader.php
 ```
 <?php
 namespace App\Service;
@@ -178,14 +179,14 @@ Le service déplace le fichier vers le répertoire de téléchargement avec . Lo
 > symfony new --no-git --full secufony
 > cd secufony
 ```
-#####Note : l’instruction « no git » est montrée par la commande symfony new -h ; on peut dans ce projet se passer de la mise en dépôt Git.
+##### Note : l’instruction « no git » est montrée par la commande symfony new -h ; on peut dans ce projet se passer de la mise en dépôt Git.
 Ouvrez PHPStorm sur un le projet par la ligne New Project from Existing Files à partir du répertoire secufony, avec le dernier choix de scénario (pas de serveur Web configuré) ; profitezen pour vérifier l’installation des plugins (File/Settings/Plugins) Symfony, PHPToolbox, PHP Annotations et .env files support :
 Changez la ligne dans le fichier .env de la racine au niveau de la variable
 ```
 DATABASE_URL :
 DATABASE_URL="mysql://sio:sio@127.0.0.1:3306/secufony?serverVersion=mariadb-10.3.31"
 ```
-#####Note : une seule ligne doit être dé-commentée et renseignée bien sûr avec les bons identifiants… ; 
+##### Note : une seule ligne doit être dé-commentée et renseignée bien sûr avec les bons identifiants… ; 
 vous trouverez la version de MariaDB dans la première page de PHPMyAdmin ; si vous êtes sous MySQL, ne mettez que le numéro de version.
 
 Créez la base de donnée secufony par PHPMyAdmin (préférable à la création automatique par Symfony).
