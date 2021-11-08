@@ -36,10 +36,10 @@ $ composer require maker profiler --dev
 ```
 Pour la phase de développement, nous installons également le maker et le profileur.
 
-##C réation d’une application Symfony
+## Création d’une application Symfony
 Nous définissons le répertoire où les images seront téléchargées.
 
-####config/services.yaml
+#### config/services.yaml
 
 ```
 parameters:
