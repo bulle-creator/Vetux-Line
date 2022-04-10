@@ -14,11 +14,11 @@ Les fichiers reçus contiennent plus d’information que nécessaire. Le fichier
 
 Dans un second temps (seconde partie de la mission), le service R&D de la société VETUX-LINE souhaite obtenir ces données sous la forme d’une base de données relationnelle.
 
-## Evils User Story
+## Evil User Story
 
-En tant qu’utilisateur malveillant je veux trouver le mot de passe d’un utilisateur en envoyant de très nombreuses requêtes d’authentification en parallèle pour me connecter à sa session. 
+En tant qu’utilisateur malveillant, je veux trouver le mot de passe d’un utilisateur en envoyant de très nombreuses requêtes d’authentification en parallèle pour me connecter à sa session. 
 
-Mesure de protections : Pour empêcher les personnes malveillantes d’avoir accès au mot de passe nous allons crypter le mot de passe. Pour cela je vais utiliser la fonction encodePassword qui va crypter le mot de passe dans la basse de donnés, comme ça même si les personnes malveillantes accèdent à la base de données il ne pourront pas voir le mot de passe qui sera crypter.
+_Mesure de protections_ : Pour empêcher les personnes malveillantes d’avoir accès au mot de passe nous allons crypter le mot de passe. Pour cela, je vais utiliser la fonction encodePassword qui va crypter le mot de passe dans la basse de donnés, comme ça même si les personnes malveillantes accèdent à la base de données il ne pourront pas voir le mot de passe qui sera crypter.
 
 ```
 <?php
